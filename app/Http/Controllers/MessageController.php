@@ -7,16 +7,18 @@ use App\Models\Message;
 
 class MessageController extends Controller
 {
-    public function showAll() {
+    public function showAll()
+    {
 
 
-       $messages = Message::all()->sortByDesc('created_at');
-       
-       return view('messages', ['messages' => $messages]);
+        $messages = Message::all()->sortByDesc('created_at');
+
+        return view('messages', ['messages' => $messages]);
     }
 
-    public function create(Request $request) {
- 
+    public function create(Request $request)
+    {
+
         // we create a new Message-Object
         $message = new Message();
         // we set the properties title and content
@@ -32,14 +34,22 @@ class MessageController extends Controller
         return redirect('/messages');
     }
 
-    public function details($id){
+    public function details($id)
+    {
         $message = Message::findOrFail($id);
         return view('messageDetails', ['message' => $message]);
     }
 
-    public function delete($id) {
+    public function delete($id)
+    {
         $result = Message::findOrFail($id)->delete();
- 
+
         return redirect('/messages');
- 
-}}
+    }
+    public function save($id)
+    {
+        $result = Message::findOrFail($id)->save();
+
+        return redirect('/messages');
+    }
+}
