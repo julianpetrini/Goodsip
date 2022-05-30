@@ -19,8 +19,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('layout/messages', function(){
-    return view ('layout/messages');
+Route::get('/messages', function () {
+    return view('messages');
 });
 
-Route::get('layout/messages', [MessageController::class, 'showAll']);
+Route::get('/messages', [MessageController::class, 'showAll']);
+
+Route::post('/create', [MessageController::class, 'create']);
+
+Route::get('/message/{id}', [MessageController::class, 'details']);
+
+Route::delete('/message/{id}', [MessageController::class, 'delete']);
