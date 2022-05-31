@@ -6,6 +6,10 @@ body {
     background: -webkit-linear-gradient(to right, #ff5f6d, #ffc371);
     background: linear-gradient(to right, #ff5f6d, #ffc371);
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 
 .welcome_text{
@@ -22,8 +26,8 @@ body {
 }
 
 .logo{
-    max-width: 50%;
-    max-height: 50%;
+    max-width: 10%;
+    max-height: 10%;
 }
 
 /* FOOTER */

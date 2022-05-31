@@ -9,15 +9,18 @@ class MessageController extends Controller
 {
     public function showAll()
     {
-
-
         $messages = Message::all()->sortByDesc('created_at');
 
         return view('messages', ['messages' => $messages]);
     }
 
     public function create(Request $request)
-    {
+    {   
+        //TO MAKE IT REQUIRED
+        $request->validate([
+            'title'=>'required | min:4',
+            'content'=>'required | min:4'
+              ]);
 
         // we create a new Message-Object
         $message = new Message();
@@ -40,16 +43,12 @@ class MessageController extends Controller
         return view('messageDetails', ['message' => $message]);
     }
 
+    
     public function delete($id)
     {
         $result = Message::findOrFail($id)->delete();
 
         return redirect('/messages');
     }
-    public function save($id)
-    {
-        $result = Message::findOrFail($id)->save();
-
-        return redirect('/messages');
-    }
+    
 }
