@@ -36,40 +36,50 @@ ts value for section title to "Mini Twitter" (section content is used in message
     <button type="submit">Submit</button>
 </form>
 
-<h2 class="prueba">Recent messages:</h2>
+
 
 <!-- loops through the $messages, that this blade template
    gets from MessageController.php. for each element of the loop which
    we call $message we print the properties (title, content
    and created_at in an <li> element -->
 
+@if (session('success'))
+<h1 class="asign-success">{{ session('success') }}</h1>
+@endif
 
+<h2 class="prueba">Recent messages:</h2>
 @foreach ($messages as $message)
+
 <ul>
     <li>
-        <b>{{$message->title}}:</b><br><br>
-            {{$message->content}}<br><br>
+        id:{{ $message->id}}<br><br>
+
+        title :{{$message->title}}<br><br>
+
+        message :{{$message->content}}<br><br>
 
         <!-- ACA PEGO EL FORMULARIO PARA DELETE -->
 
         <form action="/message/{{$message->id}}" method="post">
             @csrf
             @method('delete')
-            <button type="submit">Delete</button>
+            <button class="btn btn-primary" type="submit">Delete</button>
         </form>
 
-        <button onclick="window.location.href = '/message/{{$message->id}}'">EDIT</button><br>
+        <!-- ESTO ES LO QUE AGREGUE Y SAQUE EL LINK MIO -->
+        <ul>
+            @foreach ($messages as $message)
+            <li>
+             
+                <a href="/message/{{$message->id}}">Edit</a>
+            </li>
+            @endforeach
+        </ul>
 
-        <!-- <a href="/message/{{$message->id}}">EDIT</a> - THIS IS THE ONE THAT WORKS-->
+        <!-- <button class="btn btn-primary" onclick="window.location.href = '/message/{{$message->id}}'">EDIT</button><br> -->
 
+        <!-- <a href="/message/{{$message->id}}">EDIT</a> - THIS ISsass
 
-
-
-
-        {{$message->created_at->diffForHumans()}}
-    </li>
-
-</ul>
 @endforeach
 
 @endsection

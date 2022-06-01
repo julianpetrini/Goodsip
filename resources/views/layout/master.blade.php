@@ -7,7 +7,13 @@
     <!-- here the value is filled in from the "title" section of a blade template,
     which this layout "extended" -->
    <title>@yield('title')</title>
-   <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+   <!-- MY OLD CSS -->
+   <link rel="stylesheet" href="{{ asset('css/style.css') }}"> 
+   <!-- SASS & BOOTSTRAP -->
+   <script src="{{ asset('js/app.js') }}" defer></script>
+   <!-- Styles -->
+   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
    
 </head>
 <body>

@@ -1,0 +1,55 @@
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Nunito");
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400&display=swap");
+
+// Variables
+@import "variables";
+
+// Bootstrap
+@import "~bootstrap/scss/bootstrap";
+
+//
+
+$font-stack: "Inconsolata", monospace;
+$primary-color: rgb(255, 255, 255);
+$background-color: rgb(79, 75, 246);
+$background-gradient: linear-gradient(
+    121deg,
+    rgba(79, 75, 246, 1) 0%,
+    rgba(100, 97, 203, 1) 21%,
+    rgba(79, 75, 246, 1) 44%,
+    rgba(76, 73, 215, 1) 61%,
+    rgba(114, 111, 231, 1) 82%,
+    rgba(79, 75, 246, 1) 97%,
+    rgba(79, 75, 246, 1) 100%
+);
+
+body {
+    font: 100% $font-stack;
+    color: $primary-color;
+    background-color: $background-color;
+    background: $background-gradient;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.welcome_text{
+    color: $primary-color;
+    text-decoration: none;
+}
+
+.welcome_layout{
+    font-size: large;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.logo{
+    padding-top: 3rem;
+    max-width: 30%;
+    max-height: 20%;
+}
+
