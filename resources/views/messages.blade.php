@@ -7,20 +7,31 @@
 <!--sets value for section title to "Mini Twitter" (section title is used in messages.blade.php) -->
 @section('title', '')
 
+
 <!--starts section content, defines some html for section content and end section content
 ts value for section title to "Mini Twitter" (section content is used in messages.blade.php) -->
 @section('content')
 
 
 
-<h2>Create new message: </h2>
 
-<form action="{{route('create')}}" method="post">
-    @csrf
+<h1 class="fs-1">Gossip something with good vibes</h1>
 
-    <!-- TO MAKE AN ALERT IF IT IS EMPTY -->
 
-    @if (session('success'))
+<form action="{{route('create')}}" method="post"  >
+@csrf
+<div class="contenedor-formulario">
+  <div class="mb-3">
+    <label for="input-title" class="form-label fs-2">Title</label>
+    <input type="text" class="form-control" id="" name="title" placeholder="Here goes an amazing title">
+  </div>
+  <div class="mb-3">
+    <label for="input-content" class="form-label fs-2">Message</label>
+    <textarea class="form-control" id="" name="content" placeholder="Tell us amazing ideas"></textarea>
+  </div>
+
+
+  @if (session('success'))
     <h1 class="asign-success">{{ session('success') }}</h1>
     @endif
 
@@ -28,12 +39,9 @@ ts value for section title to "Mini Twitter" (section content is used in message
     <h1 class="asign-danger">{{ $message }}</h1>
     @enderror
 
-    <!-- this blade directive is necessary for all form posts somewhere in between
-       the form tags -->
 
-    <input type="text" name="title" placeholder="Title">
-    <input type="text" name="content" placeholder="Content">
-    <button type="submit">Submit</button>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</div>
 </form>
 
 
@@ -43,13 +51,8 @@ ts value for section title to "Mini Twitter" (section content is used in message
    we call $message we print the properties (title, content
    and created_at in an <li> element -->
 
-@if (session('success'))
-<h1 class="asign-success">{{ session('success') }}</h1>
-@endif
 
-<h2 class="prueba">Recent messages:</h2>
-@foreach ($messages as $message)
-
+    @foreach ($messages as $message)
 <ul>
     <li>
         id:{{ $message->id}}<br><br>
@@ -58,28 +61,20 @@ ts value for section title to "Mini Twitter" (section content is used in message
 
         message :{{$message->content}}<br><br>
 
-        <!-- ACA PEGO EL FORMULARIO PARA DELETE -->
-
         <form action="/message/{{$message->id}}" method="post">
             @csrf
             @method('delete')
-            <button class="btn btn-primary" type="submit">Delete</button>
+            <button class="btn btn-danger" type="submit">Delete</button>
         </form>
 
-        <!-- ESTO ES LO QUE AGREGUE Y SAQUE EL LINK MIO -->
-        <ul>
-            @foreach ($messages as $message)
-            <li>
-             
-                <a href="/message/{{$message->id}}">Edit</a>
-            </li>
-            @endforeach
-        </ul>
+        <a class="btn btn-warning" href="/message/{{$message->id}}">Edit</a>
+                {{$message->created_at->diffForHumans()}}
+    </li>
+          
+</ul>
+          @endforeach
+          
+          
 
-        <!-- <button class="btn btn-primary" onclick="window.location.href = '/message/{{$message->id}}'">EDIT</button><br> -->
 
-        <!-- <a href="/message/{{$message->id}}">EDIT</a> - THIS ISsass
 
-@endforeach
-
-@endsection
