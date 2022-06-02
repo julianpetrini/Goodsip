@@ -1,7 +1,7 @@
 <!--extend layout master.blade.php -->
 
 
-<img class="logo" src="{{ asset('img/twt_logo.png') }}">
+<a href="welcome"><img class="logo"src="{{ asset('img/twt_logo.png') }}"></a>
 @extends('layout/master')
 
 <!--sets value for section title to "Mini Twitter" (section title is used in messages.blade.php) -->
@@ -14,9 +14,9 @@ ts value for section title to "Mini Twitter" (section content is used in message
 
 
 
-
-<h1 class="fs-1">Gossip something with good vibes</h1>
-
+<div class="text-center">
+  <h1 class="fs-1">Gossip something with good vibes</h1>
+</div>
 
 <form action="{{route('create')}}" method="post"  >
 @csrf
@@ -53,25 +53,28 @@ ts value for section title to "Mini Twitter" (section content is used in message
 
 
     @foreach ($messages as $message)
-<ul>
-    <li>
-        id:{{ $message->id}}<br><br>
+<table class="gossip-table">
+    <tr>
+        {{-- <th>{{ $message->id}}</th>  --}}
 
-        title :{{$message->title}}<br><br>
+        <th>{{$message->title}}</th>
 
-        message :{{$message->content}}<br><br>
+          <th>{{$message->content}}</th>
 
-        <form action="/message/{{$message->id}}" method="post">
-            @csrf
-            @method('delete')
-            <button class="btn btn-danger" type="submit">Delete</button>
-        </form>
-
-        <a class="btn btn-warning" href="/message/{{$message->id}}">Edit</a>
-                {{$message->created_at->diffForHumans()}}
-    </li>
+       
+    </tr>
           
-</ul>
+</table>
+<br>
+<form action="/message/{{$message->id}}" method="post">
+  @csrf
+  @method('delete')
+  <button class="btn btn-danger" type="submit">Delete</button>
+
+
+<a class="btn btn-warning" href="/message/{{$message->id}}">Edit</a><br>
+      <div class="text-center">{{$message->created_at->diffForHumans()}}</div>
+    </form>
           @endforeach
           
           

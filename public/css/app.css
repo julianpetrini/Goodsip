@@ -11313,9 +11313,9 @@ body {
 }
 
 .logo {
-  padding-top: 3rem;
-  max-width: 30%;
-  max-height: 20%;
+  padding: 3rem;
+  max-width: 80vw;
+  min-height: 40%;
 }
 
 .mb-3 {
@@ -11324,4 +11324,28 @@ body {
 
 .contenedor-formulario {
   padding: 3rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+.gossip-table {
+  border-collapse: collapse;
+  width: 40vw;
+}
+
+th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background: linear-gradient(121deg, rgb(79, 75, 246) 0%, rgb(100, 97, 203) 21%, rgb(79, 75, 246) 44%, rgb(76, 73, 215) 61%, rgb(114, 111, 231) 82%, rgb(79, 75, 246) 97%, rgb(79, 75, 246) 100%);
+  color: rgb(255, 255, 255);
+  border: 1px solid rgb(255, 255, 255);
+  padding: 8px;
+}
+
+th:hover {
+  background: rgb(255, 255, 255);
+  color: black;
 }
