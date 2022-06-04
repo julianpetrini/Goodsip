@@ -14,9 +14,11 @@ ts value for section title to "Mini Twitter" (section content is used in message
     <h3>{{ $message->title }}</h3>
     <p>{{ $message->content }}</p>
 
-    <div class="contenedor-formulario text-center">
+    <div class="contenedor-formulario">
         <form action="/update/{{ $message->id }}" method="post">
+            <label for="input-title" class="form-label fs-2">Title</label>
             <input type="text" name="title" value="{{ $message->title }}" class="form-control mb-3">
+            <label for="input-content" class="form-label fs-2">Message</label>
             <input type="text" name="content" value="{{ $message->content }}" class="form-control mb-3">
             @csrf
 

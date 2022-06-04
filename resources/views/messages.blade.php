@@ -1,7 +1,7 @@
 <!--extend layout master.blade.php -->
 
 
-<a href='/'><img class="logo" src="{{ asset('img/twt_logo.png') }}"></a>
+<a href='/'><img class="logo-main" src="{{ asset('img/logo2.png') }}"></a>
 @extends('layout/master')
 
 <!--sets value for section title to "Mini Twitter" (section title is used in messages.blade.php) -->

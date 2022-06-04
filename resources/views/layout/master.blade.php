@@ -25,7 +25,10 @@
    @yield('content')
    <!-- here the php function date() is called with the format pattern 'd.m.Y'
      and output in html-->
-   <div class="p-3"><b>Local time: {{date('d.m.Y')}}</b></div>   
+   <div class="p-3 text-center">
+         made with ♥ <br>
+      <b>{{date('d.m.Y')}}</b>
+   </div>   
 
 <!-- FOOTER -->
 

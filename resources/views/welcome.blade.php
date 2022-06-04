@@ -5,8 +5,7 @@
 
 <div class="welcome_layout">
     <a href="messages">
-        <img class="logo"src="{{ asset('img/twt_logo.png') }}">
-        <h1 class="welcome_text text-center">Welcome to the next Twitter</h1>
+        <img class="logo"src="{{ asset('img/logo3.png') }}">
         <h2 class="welcome_text text-center">Gossip with good vibes</h2>
     </a>
 </div>
