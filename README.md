@@ -1,17 +1,6 @@
 ## First project with Laravel 
 
-![image mockup](https://raw.githubusercontent.com/julianpetrini/LARAVEL_OPPORTUNITY/master/public/img/localhost_.png)
-
-## How the info is displayed once saved
-
-![image mockup](https://raw.githubusercontent.com/julianpetrini/LARAVEL_OPPORTUNITY/master/public/img/localhost_messages.png)
-
-## Accesing entry
-
-![image mockup](https://raw.githubusercontent.com/julianpetrini/LARAVEL_OPPORTUNITY/master/public/img/localhost_message_24.png)
-
-
-
+![image mockup](https://raw.githubusercontent.com/julianpetrini/LARAVEL_OPPORTUNITY/new_features_design/public/img/presentation.png)
 
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
