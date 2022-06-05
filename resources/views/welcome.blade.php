@@ -9,3 +9,4 @@
         <h2 class="welcome_text text-center">Gossip with good vibes</h2>
     </a>
 </div>
+

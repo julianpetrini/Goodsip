@@ -54,7 +54,7 @@ body {
     min-height: 40%;
 }
 
-.logo-main{
+.logo-main {
     padding: 1rem;
     max-width: 20vw;
     min-height: 40%;
@@ -68,26 +68,40 @@ body {
     padding: 3rem;
 }
 
-a {
-    text-decoration: none;
+.gossip-table{
+    table-layout: fixed;
+    padding: 0.5rem;
+    border-collapse: collapse;
+    width: 80vw;
+    overflow-x:auto;
 }
 
-.gossip-table {
-    border-collapse: collapse;
-    width: 40vw;
-}
 
 th {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: left;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+
+    text-align: center;
+    vertical-align: center;
+    font-size: 1rem;
+
     background: $background-gradient;
     color: $primary-color;
     border: 1px solid $primary-color;
-    padding: 8px;
+
+    word-break: break-word
+
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
 th:hover {
     background: $primary-color;
     color: black;
 }
+
+// PREGUNTAR PORQUE CUANDO TRABAJO LA ESTRUCTURA COMO SASS ME TRER ERROR MODELE BUILD ERROR
+// TUVE QUE CAMBIAR EL APP.CSS para MODIFICAR EL "A"

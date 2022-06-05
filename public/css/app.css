@@ -11332,23 +11332,29 @@ body {
   padding: 3rem;
 }
 
-a {
-  text-decoration: none;
-}
-
 .gossip-table {
+  table-layout: fixed;
+  padding: 0.5rem;
   border-collapse: collapse;
-  width: 40vw;
+  width: 80vw;
+  overflow-x: auto;
 }
 
 th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: left;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  text-align: center;
+  vertical-align: center;
+  font-size: 1rem;
   background: linear-gradient(121deg, rgb(79, 75, 246) 0%, rgb(100, 97, 203) 21%, rgb(79, 75, 246) 44%, rgb(76, 73, 215) 61%, rgb(114, 111, 231) 82%, rgb(79, 75, 246) 97%, rgb(79, 75, 246) 100%);
   color: rgb(255, 255, 255);
   border: 1px solid rgb(255, 255, 255);
-  padding: 8px;
+  word-break: break-word;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 th:hover {
