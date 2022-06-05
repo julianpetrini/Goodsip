@@ -1,23 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400&display=swap');
 
 body {
     font-family: 'Inconsolata', monospace;
-    background: #ff5f6d;
-    background: -webkit-linear-gradient(to right, #ff5f6d, #ffc371);
-    background: linear-gradient(to right, #ff5f6d, #ffc371);
+    background: rgb(79,75,246);
+    background: linear-gradient(121deg, rgba(79,75,246,1) 0%, rgba(100,97,203,1) 21%, rgba(79,75,246,1) 44%, rgba(76,73,215,1) 61%, rgba(114,111,231,1) 82%, rgba(79,75,246,1) 97%, rgba(79,75,246,1) 100%);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    /* /* justify-content: center;
   }
 
 .welcome_text{
     color: white;
     text-decoration: none;
-}
+} */
 
-.welcome_layout{
+/* .welcome_layout{
     font-size: large;
     height: 100vh;
     display: flex;
@@ -30,7 +29,7 @@ body {
     max-height: 10%;
 }
 
-/* FOOTER */
+FOOTER */ 
 
 
 

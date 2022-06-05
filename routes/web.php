@@ -25,9 +25,19 @@ Route::get('/messages', [MessageController::class, 'showAll']);
 
 Route::post('/create', [MessageController::class, 'create'])->name('create');
 
-Route::get('/message/{id}', [MessageController::class, 'details']);
+                    ////////////////////////
+
+Route::get('/message/{id}', [MessageController::class, 'editData']);
+
+                    /////////////////////////
 
 Route::delete('/message/{id}', [MessageController::class, 'delete']);
+
+
+// Route::post('/edit', [MessageController::class, 'update']);
+
+Route::post('/update/{id}', [MessageController::class, 'update']);
+
 
 
 
